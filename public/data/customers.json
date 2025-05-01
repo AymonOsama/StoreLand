@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Ahmed Samir",
+        "email": "ahmed@example.com",
+        "password": "ahmed123",
+        "phone": "+201001234567",
+        "address": "15 Tahrir St, Cairo, Egypt",
+        "avatar": "https://i.pravatar.cc/150?img=1"
+    },
+    {
+        "id": 2,
+        "name": "Nour Hassan",
+        "email": "nour@example.com",
+        "password": "nour456",
+        "phone": "+201002345678",
+        "address": "33 Zamalek, Cairo, Egypt",
+        "avatar": "https://i.pravatar.cc/150?img=2"
+    },
+    {
+        "id": 3,
+        "name": "Omar Youssef",
+        "email": "omar@example.com",
+        "password": "omar789",
+        "phone": "+201003456789",
+        "address": "21 Maadi St, Giza, Egypt",
+        "avatar": "https://i.pravatar.cc/150?img=3"
+    },
+    {
+        "id": 4,
+        "name": "Sara Ali",
+        "email": "sara@example.com",
+        "password": "sara987",
+        "phone": "+201004567890",
+        "address": "10 Mohandessin, Giza, Egypt",
+        "avatar": "https://i.pravatar.cc/150?img=4"
+    },
+    {
+        "id": 5,
+        "name": "Yassin Tarek",
+        "email": "yassin@example.com",
+        "password": "yassin321",
+        "phone": "+201005678901",
+        "address": "5 Nasr City, Cairo, Egypt",
+        "avatar": "https://i.pravatar.cc/150?img=5"
+    }
+]

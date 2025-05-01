@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import AppRouters from "./routers/AppRouters";
+import { ToastContainer } from 'react-toastify';
+import { UserProvider } from "./context/UserContext";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col min-h-screen">
+      <UserProvider>
+        <div className="flex-grow">
+          <AppRouters />
+        </div>
+        <ToastContainer 
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnHover
+          draggable
+          theme="colored"
+        />
+      </UserProvider>
     </div>
   );
 }
+
 
 export default App;
