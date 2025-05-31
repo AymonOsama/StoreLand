@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
@@ -22,7 +23,7 @@ export default function Footer() {
             <div>
                 <h4 className="text-sm font-semibold text-gray-900 uppercase mb-4">Resources</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
-                    <li><a href="#" className="hover:text-blue-600">User Strategy</a></li>
+                    <li><Link to="/UserStrategy" className="hover:text-blue-600">User Strategy</Link></li>
                 </ul>
             </div>
 
@@ -30,8 +31,8 @@ export default function Footer() {
             <div>
                 <h4 className="text-sm font-semibold text-gray-900 uppercase mb-4">Company</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
-                    <li><a href="#" className="hover:text-blue-600">Contact & Support</a></li>
-                    <li><a href="#" className="hover:text-blue-600">Success History</a></li>
+                    <li><Link to="/contactsupport" className="hover:text-blue-600">Contact & Support</Link></li>
+                    <li><Link to="/successhistory" className="hover:text-blue-600">Success History</Link></li>
                 </ul>
             </div>
 
@@ -39,8 +40,8 @@ export default function Footer() {
             <div>
                 <h4 className="text-sm font-semibold text-gray-900 uppercase mb-4">Quick Links</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
-                    <li><a href="#" className="hover:text-blue-600">Know Our Team</a></li>
-                    <li><a href="#" className="hover:text-blue-600">Download App</a></li>
+                    <li><Link to="/knowourteam" className="hover:text-blue-600">Know Our Team</Link></li>
+                    <li><Link to="/downloadapp" className="hover:text-blue-600">Download App</Link></li>
                 </ul>
             </div>
 
@@ -48,16 +49,16 @@ export default function Footer() {
                 <div className="flex flex-col items-start">
                     <h4 className="text-sm font-semibold text-gray-900 uppercase mb-4">Follow Us On</h4>
                     <div className="flex flex-wrap gap-3">
-                        <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white hover:opacity-80">
+                        <a href="facebook.com" className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white hover:opacity-80">
                             <FaFacebookF size={14} />
                         </a>
-                        <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:text-blue-600">
+                        <a href="facebook.com" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:text-blue-600">
                             <FaTwitter size={14} />
                         </a>
-                        <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:text-red-500">
+                        <a href="facebook.com" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:text-red-500">
                             <FaYoutube size={14} />
                         </a>
-                        <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:text-blue-800">
+                        <a href="facebook.com" className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:text-blue-800">
                             <FaLinkedinIn size={14} />
                         </a>
                     </div>
