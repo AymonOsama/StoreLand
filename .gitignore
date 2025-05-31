@@ -1,4 +1,5 @@
+# ملفات النظام والمشروع
 node_modules/
+build/
 .cache/
 *.pack
-build/ 
