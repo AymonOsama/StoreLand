@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+
+//import icons
 import { LuUserRound } from "react-icons/lu";
 import { HiOutlineShoppingCart, HiMenuAlt3, HiX, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { IoMdSearch } from "react-icons/io";
@@ -21,13 +23,15 @@ export default function NavBar() {
 
     // ─── Set Active Nav Item Based On Route ───────────────
     useEffect(() => {
-        const path = location.pathname;
-        if (path.includes("/home")) setActiveNav("Home");
-        else if (path.includes("/products")) setActiveNav("Products");
-        else if (path.includes("/about")) setActiveNav("AboutUs");
-        else if (path.includes("/UserProfile")) setActiveNav("User");
-        else if (path.includes("/cart")) setActiveNav("Cart");
-    }, [location.pathname]);
+    const path = location.pathname;
+    if (path.includes("/home")) setActiveNav("Home");
+    else if (path.includes("/products")) setActiveNav("Products");
+    else if (path.includes("/about")) setActiveNav("AboutUs");
+    else if (path.includes("/UserProfile")) setActiveNav("User");
+    else if (path.includes("/cart")) setActiveNav("Cart");
+    else setActiveNav(""); // ❗ هنا بنفضي الاختيار لو الصفحة مش واحدة من فوق
+}, [location.pathname]);
+
 
     // ─── Close Dropdowns When Clicking Outside ─────────────
     useEffect(() => {
@@ -38,6 +42,7 @@ export default function NavBar() {
             ) {
                 setSearchIsOpen(false);
                 setUserIsOpen(false);
+                setIsOpen(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -69,10 +74,10 @@ export default function NavBar() {
             <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
 
                 {/* ───── Logo ───── */}
-                <div className="flex items-center gap-2">
+                <Link to="/home" className="flex items-center gap-2">
                     <img src="/data/images/StoreLand.png" alt="StoreLand Logo" className="h-6 w-6" />
                     <span className="text-xl font-semibold text-black">StoreLand</span>
-                </div>
+                </Link>
 
                 {/* ───── Desktop Navigation ───── */}
                 <ul className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
@@ -172,6 +177,14 @@ export default function NavBar() {
                         placeholder="Search..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                                navigate(`/products?search=${encodeURIComponent(searchQuery)}`);
+                                setSearchIsOpen(false); // نقفل البوكس بعد البحث
+                                setIsOpen(false);
+                                setSearchQuery('');
+                            }
+                        }}
                         className="w-full p-2 px-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </div>

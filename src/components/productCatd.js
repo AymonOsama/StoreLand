@@ -1,13 +1,13 @@
-import React from 'react';
 
 // Truncate text function to limit the length of a string
 // If the text is longer than the specified maxLength, it will be trimmed and "..." will be added.
-const truncateText = (text, maxLength) => {
+const truncateText = (text = '', maxLength) => {
     if (text.length > maxLength) {
         return text.substring(0, maxLength - 3) + "...";
     }
     return text;
 };
+
 
 // ProductCard Component to display a single product card
 export default function ProductCard({ product }) {

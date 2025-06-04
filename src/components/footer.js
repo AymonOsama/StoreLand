@@ -1,7 +1,22 @@
+import { useEffect, useState } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Footer() {
+    const [active, setactive] = useState();
+    const location = useLocation();
+
+
+    useEffect(() => {
+        const path = location.pathname;
+        if (path.includes("/contactsupport")) setactive("contactsupport");
+        else if (path.includes("/UserStrategy")) setactive("UserStrategy");
+        else if (path.includes("/successstory")) setactive("successstory");
+        else if (path.includes("/knowourteam")) setactive("knowourteam");
+        else if (path.includes("/downloadapp")) setactive("downloadapp");
+        else setactive(null); // لو مفيش تطابق
+    }, [location.pathname]);
+
     return (
         <footer className="bg-white border-t border-gray-200">
             <div className="max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
@@ -23,7 +38,7 @@ export default function Footer() {
                 <div>
                     <h4 className="text-sm font-semibold text-gray-900 uppercase mb-4">Resources</h4>
                     <ul className="space-y-2 text-sm text-gray-600">
-                        <li><Link to="/UserStrategy" className="hover:text-blue-600">User Strategy</Link></li>
+                        <li><Link to="/UserStrategy" className={`${active === 'UserStrategy' ? "text-blue-600" : "text-gray-600"} hover:text-blue-600`}>User Strategy</Link></li>
                     </ul>
                 </div>
 
@@ -31,8 +46,8 @@ export default function Footer() {
                 <div>
                     <h4 className="text-sm font-semibold text-gray-900 uppercase mb-4">Company</h4>
                     <ul className="space-y-2 text-sm text-gray-600">
-                        <li><Link to="/contactsupport" className="hover:text-blue-600">Contact & Support</Link></li>
-                        <li><Link to="/successhistory" className="hover:text-blue-600">Success History</Link></li>
+                        <li><Link to="/contactsupport" className={`${active === 'contactsupport' ? "text-blue-600" : "text-gray-600"} hover:text-blue-600`}>Contact & Support</Link></li>
+                        <li><Link  to="/successstory" className={`${active === 'successstory' ? "text-blue-600" : "text-gray-600"} hover:text-blue-600`}>Success History</Link></li>
                     </ul>
                 </div>
 
@@ -40,8 +55,8 @@ export default function Footer() {
                 <div>
                     <h4 className="text-sm font-semibold text-gray-900 uppercase mb-4">Quick Links</h4>
                     <ul className="space-y-2 text-sm text-gray-600">
-                        <li><Link to="/knowourteam" className="hover:text-blue-600">Know Our Team</Link></li>
-                        <li><Link to="/downloadapp" className="hover:text-blue-600">Download App</Link></li>
+                        <li><Link to="/knowourteam" className={`${active === 'knowourteam' ? "text-blue-600" : "text-gray-600"} hover:text-blue-600`}>Know Our Team</Link></li>
+                        <li><Link to="/downloadapp" className={`${active === 'downloadapp' ? "text-blue-600" : "text-gray-600"} hover:text-blue-600`}>Download App</Link></li>
                     </ul>
                 </div>
 
