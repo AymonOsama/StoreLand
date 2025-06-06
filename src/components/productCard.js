@@ -1,6 +1,6 @@
+import { useNavigate } from "react-router-dom";
 
-// Truncate text function to limit the length of a string
-// If the text is longer than the specified maxLength, it will be trimmed and "..." will be added.
+
 const truncateText = (text = '', maxLength) => {
     if (text.length > maxLength) {
         return text.substring(0, maxLength - 3) + "...";
@@ -11,12 +11,14 @@ const truncateText = (text = '', maxLength) => {
 
 // ProductCard Component to display a single product card
 export default function ProductCard({ product }) {
+    const navigate = useNavigate();
     // Show a loading message if the product data hasn't been loaded yet
     if (!product) return <div className="text-center p-4">Loading...</div>;
 
     return (
         <div 
-            className="w-full sm:w-80 mx-auto bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-[500px]"
+            className="cursor-pointer w-full sm:w-80 mx-auto bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 h-[500px]"
+            onClick={() => navigate(`/productpage/${product.id}`)}
         > 
             {/* Product Image Container */}
             <div className="h-52 bg-gray-100 flex items-center justify-center p-3">

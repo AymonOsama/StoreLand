@@ -57,12 +57,19 @@ export default function LoginForm() {
                 email: foundUser.email,
                 password: foundUser.password,
                 name: foundUser.name,
+                id: foundUser.id
             };
             if (rememberMe) {
-                localStorage.setItem("rememberedUser", JSON.stringify( userData  ));
-            }else{
-                sessionStorage.setItem("sessionUser", JSON.stringify( userData  ));
+                localStorage.setItem("rememberedUser", JSON.stringify(userData));
+                console.log("Saved to localStorage:", userData); // 🔍
+                sessionStorage.removeItem("sessionUser");
+            } else {
+                sessionStorage.setItem("sessionUser", JSON.stringify(userData));
+                console.log("Saved to sessionStorage:", userData); // 🔍
+                localStorage.removeItem("rememberedUser");
             }
+
+
             setUser(userData); // ⬅️ update user context
             toast.success("Logged in successfully!" , {theme:"light"});
             setTimeout(() => {

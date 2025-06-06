@@ -13,6 +13,11 @@ import PrivateLayout from "../Layouts/PrivateLayout";
 import Support from "../pages/support";
 import SuccessStory from "../pages/SuccessStory";
 import UserStrategy from "../pages/userStrategy";
+import ProductPage from "../pages/productPage";
+import UserProfile from "../pages/userProfile";
+import CartPage from "../pages/cart";
+import KnowOurTeam from "../pages/KnowOurTeam";
+import DownloadAppPage from "../pages/downloadApp";
 // import NotFound from "../pages/NotFound";
 
 export default function AppRouters() {
@@ -35,6 +40,11 @@ export default function AppRouters() {
                 <Route path="/contactsupport" element={<Support/>} />
                 <Route path="/successstory" element={<SuccessStory/>} />
                 <Route path="/userstrategy" element={<UserStrategy/>} />
+                <Route path="/productpage/:id" element={<ProductPage/>} />
+                <Route path="/userprofile" element={<UserProfile/>} />
+                <Route path="/cartpage" element={<CartPage/>} />
+                <Route path="/knowourteam" element={<KnowOurTeam/>} />
+                <Route path="/downloadapp" element={<DownloadAppPage/>} />
             </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}

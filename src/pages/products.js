@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';  // استيراد framer-motion
-import ProductCard from '../components/productCatd'; // صححنا اسم الملف
+import ProductCard from '../components/productCard'; // صححنا اسم الملف
 import FilterSection from '../components/FilterSection';
 import Pagination from '../components/Pagination';
 import { useLocation } from "react-router-dom";

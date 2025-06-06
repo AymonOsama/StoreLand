@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ProductCard from '../productCatd';
+import { useState, useEffect } from 'react';
+import ProductCard from '../productCard';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import axios from 'axios';
 import { useSwipeable } from 'react-swipeable';
