@@ -18,6 +18,7 @@ import UserProfile from "../pages/userProfile";
 import CartPage from "../pages/cart";
 import KnowOurTeam from "../pages/KnowOurTeam";
 import DownloadAppPage from "../pages/downloadApp";
+import CheckOut from "../pages/checkOut";
 // import NotFound from "../pages/NotFound";
 
 export default function AppRouters() {
@@ -45,6 +46,7 @@ export default function AppRouters() {
                 <Route path="/cartpage" element={<CartPage/>} />
                 <Route path="/knowourteam" element={<KnowOurTeam/>} />
                 <Route path="/downloadapp" element={<DownloadAppPage/>} />
+                <Route path="/checkout" element={<CheckOut/>} />
             </Route>
 
         {/* <Route path="*" element={<NotFound />} /> */}
